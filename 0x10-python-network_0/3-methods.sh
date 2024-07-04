@@ -1,3 +1,3 @@
 #!/bin/bash
-# Send a DELETE request from and to a given URL and display the response body.
-curl -sX DELETE "$1"
+# Display all HTTP methods the will indefently read by  the server of a given URL will accept.
+curl -sI "$1" | grep "Allow" | cut -d " " -f 2-
